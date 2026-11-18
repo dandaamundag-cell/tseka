@@ -1,65 +1,630 @@
-
 <!DOCTYPE html>
 <html lang="mn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Миний анхны веб сайт</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enka ♡ 100 Days</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f4f8;
-            text-align: center;
-            padding: 50px;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-        .container {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            max-width: 600px;
-            margin: auto;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
+<style>
+:root {
+  --purple: #76528f;
+  --deep: #49315f;
+  --lavender: #d9c4f2;
+  --pink: #f3d8ed;
+}
 
-        h1 {
-            color: #2563eb;
-        }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-        p {
-            color: #555;
-            font-size: 18px;
-        }
+body {
+  min-height: 100vh;
+  font-family: 'Nunito', sans-serif;
+  color: var(--deep);
+  background: linear-gradient(-45deg,#e8d9fa,#f7e5f2,#d9c8f4,#f8e8f6);
+  background-size: 400% 400%;
+  animation: gradient 14s ease infinite;
+  overflow-x: hidden;
+}
 
-        button {
-            background: #2563eb;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 8px;
-            cursor: pointer;
-        }
+@keyframes gradient {
+  0%,100% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+}
 
-        button:hover {
-            background: #1d4ed8;
-        }
-    </style>
+#stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  color: white;
+  animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%,100% {opacity:.2;transform:scale(.7);}
+  50% {opacity:1;transform:scale(1.3);}
+}
+
+header {
+  position: relative;
+  z-index: 2;
+  padding: 24px 15px;
+  text-align: center;
+}
+
+.logo {
+  font-family: 'Great Vibes',cursive;
+  font-size: 38px;
+  color: var(--purple);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+nav button {
+  border: 1px solid #ffffffb0;
+  background: #ffffff85;
+  color: var(--deep);
+  padding: 10px 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 700;
+  transition: .3s;
+}
+
+nav button:hover {
+  background: #fff;
+  transform: translateY(-3px);
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  max-width: 850px;
+  margin: auto;
+  padding: 20px;
+}
+
+.page {
+  display: none;
+  text-align: center;
+  padding: 45px 25px;
+  border-radius: 28px;
+  background: #ffffff75;
+  border: 1px solid #ffffffb0;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 15px 45px #76528f20;
+  animation: appear .7s ease;
+}
+
+.page.active {
+  display: block;
+}
+
+@keyframes appear {
+  from {opacity:0;transform:translateY(15px);}
+  to {opacity:1;transform:translateY(0);}
+}
+
+.eyebrow {
+  color: #795c99;
+  letter-spacing: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-family: 'Cormorant Garamond',serif;
+  font-size: clamp(45px,8vw,75px);
+  color: #674582;
+  margin: 15px 0;
+}
+
+h2 {
+  font-family: 'Great Vibes',cursive;
+  font-size: 42px;
+  color: var(--purple);
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #59436e;
+  max-width: 550px;
+  margin: 15px auto;
+}
+
+.script {
+  font-family: 'Great Vibes',cursive;
+  color: #76528f;
+  font-size: 30px;
+}
+
+.main-button {
+  border: none;
+  border-radius: 30px;
+  padding: 13px 27px;
+  background: #79569e;
+  color: white;
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 10px;
+  box-shadow: 0 5px 18px #72518d45;
+  transition: .3s;
+}
+
+.main-button:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: #63427e;
+}
+
+.letter {
+  max-width: 650px;
+  margin: 20px auto;
+  padding: 35px;
+  text-align: left;
+  border-radius: 25px;
+  background: linear-gradient(145deg,#eee1fc,#dfc9f2,#f4e5f8);
+  border: 1px solid #d8bff0;
+  box-shadow: 0 12px 35px #76528f25;
+  color: #49315f;
+  line-height: 2;
+  white-space: pre-line;
+}
+
+.reason-card {
+  max-width: 550px;
+  margin: 25px auto;
+  padding: 35px 20px;
+  background: #ffffff85;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px #76528f20;
+}
+
+.reason-number {
+  font-family: 'Cormorant Garamond',serif;
+  font-size: 25px;
+  color: #9875b5;
+}
+
+.reason-text {
+  font-size: 19px;
+  line-height: 1.8;
+  margin: 20px 0;
+  color: #49315f;
+}
+
+.reason-100 {
+  display: none;
+  max-width: 520px;
+  margin: 35px auto;
+  padding: 40px 25px;
+  border-radius: 28px;
+  background: linear-gradient(145deg,#fffaff,#eadbfa);
+  box-shadow: 0 15px 45px #76528f30;
+  animation: appear 1s ease;
+}
+
+.reason-100.show {
+  display: block;
+}
+
+.reason-100 .number {
+  font-size: 58px;
+  color: #9b75bd;
+}
+
+.reason-100 h2 {
+  font-size: 42px;
+}
+
+.reason-100 p {
+  font-size: 19px;
+  line-height: 1.8;
+}
+
+.reason-100 .final-love {
+  font-family: 'Great Vibes',cursive;
+  font-size: 30px;
+  color: #986eb8;
+  margin-top: 20px;
+}
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.memory {
+  min-height: 180px;
+  padding: 15px;
+  border-radius: 20px;
+  background: #ffffff85;
+  border: 1px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #684b81;
+  overflow: hidden;
+}
+
+.memory img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.gift-box {
+  font-size: 75px;
+  margin: 25px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,100% {transform:translateY(0);}
+  50% {transform:translateY(-12px);}
+}
+
+#giftMessage {
+  display: none;
+  margin: 25px auto;
+  max-width: 500px;
+  padding: 25px;
+  border-radius: 20px;
+  background: #f1e3fb;
+  line-height: 2;
+}
+
+footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 35px;
+  color: #76528f;
+  font-family: 'Great Vibes',cursive;
+  font-size: 25px;
+}
+
+@media(max-width:600px) {
+  .page {padding:35px 17px;}
+  .letter {padding:22px;}
+  nav button {padding:9px 13px;font-size:12px;}
+}
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.memory-card {
+  background: #ffffffaa;
+  padding: 15px;
+  border-radius: 22px;
+  text-align: center;
+  box-shadow: 0 8px 25px #8062a522;
+  transition: transform 0.3s ease;
+}
+
+.memory-card:hover {
+  transform: translateY(-8px);
+}
+
+.memory-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.memory-card h3 {
+  color: #674582;
+  margin-top: 15px;
+}
+
+.memory-card p {
+  color: #806b91;
+  font-size: 14px;
+}
+
+</style>
 </head>
 
 <body>
 
-    <div class="container">
-        <h1>Сайн байна уу! 👋</h1>
+<div id="stars"></div>
 
-        <p>Энэ бол миний анхны веб сайт.</p>
+<header>
+  <div class="logo">Enka ♡</div>
+  <nav>
+    <button onclick="showPage('home')">Home</button>
+    <button onclick="showPage('letter')">A Little Letter</button>
+    <button onclick="showPage('reasons')">100 Reasons</button>
+    <button onclick="showPage('memories')">Our Memories</button>
+    <button onclick="showPage('gift')">Secret Gift</button>
+  </nav>
+</header>
 
-        <p>enhuushd gomdson say zondoo bayrtai bjaahad</p>
+<main>
 
-        <button onclick="alert('Амжилттай ажиллалаа!')">
-          hudlaa hun shoolj ineegeed
-        </button>
+<section id="home" class="page active">
+  <div class="eyebrow">A little celebration of us</div>
+  <h1>100 Days Together</h1>
+  <div class="script">For my favorite person ♡</div>
+  <p class="subtitle">
+    Нэгэн сайхан учралаас эхэлсэн бидний түүхийн
+    хамгийн нандин 100 өдөрт зориулав.
+  </p>
+  <button class="main-button" onclick="showPage('letter')">
+    Open my heart ♡
+  </button>
+  <p class="script">November • Our little universe</p>
+</section>
+
+<section id="letter" class="page">
+  <div class="eyebrow">Words from my heart</div>
+  <h1>A Little Letter</h1>
+  <div class="letter">
+    My dearest love,
+
+    Чамдаа энэ өдрийн мэнд хүргэе. ♡
+
+    Бидний хамтдаа өнгөрүүлсэн 100 өдөр, 1000 тэврэлт, 10000 үнсэлт, 
+    100000 инээмсэглэл, 1000000 хайрын үгс надад өгсөн чи минь ♡
+
+    Чамтай учирсандаа, чамаар хайрлуулж, чиний дэргэд байгаадаа
+    би хязгааргүй их баярладаг юм шүү.
+
+    Бидний инээсэн мөчүүд, ярилцсан ярианууд,
+    хамтдаа бүтээсэн жижигхэн дурсамж бүр
+    миний зүрхэнд үргэлж тодоос тод байх болно.
+
+    Надад ирсэн миний хамгийн том баатар бахархал минь.
+
+    With all my love,
+    Your girl ♡
+  </div>
+</section>
+
+<section id="reasons" class="page">
+  <div class="eyebrow">A hundred little reasons</div>
+  <h1>Why I Love You</h1>
+  <p class="subtitle">Надад чамд хайртай 100 шалтгаан бий...</p>
+
+  <div class="reason-card">
+    <div class="reason-number" id="reasonNumber">Reason 1 / 99</div>
+    <div class="reason-text" id="reasonText"></div>
+    <button class="main-button" onclick="nextReason()">Next reason ♡</button>
+  </div>
+
+  <div class="reason-100" id="reason100">
+    <div class="number">♡ 100 ♡</div>
+    <h2>My favorite reason...</h2>
+    <p>Учир нь чи бол чи.<br>Надад өөр шалтгаан хэрэггүй.</p>
+    <div class="final-love">I love you, always. ♡</div>
+  </div>
+</section>
+
+<section id="memories" class="page">
+  <h2>Our Memories ♡</h2>
+  <p class="subtitle">Little moments, forever memories</p>
+
+  <div class="memory-grid">
+
+    <div class="memory-card">
+      <img src="images/zurag1.jpg" alt="Миний мөрөөдлийн залуу">
+      <h3>Миний мөрөөдлийн залуу</h3>
+      <p>A moment I never want to forget.</p>
     </div>
+
+    <div class="memory-card">
+      <img src="images/zurag2.jpg" alt="Миний хичээх шалтгаан">
+      <h3>Миний хичээх шалтгаан
+      <p>My favorite place is next to you.</p>
+    </div>
+
+    <div class="memory-card">
+      <img src="images/zurag3.jpg" alt="Миний аз жаргал">
+      <h3>Миний аз жаргал
+      <p>One of my happiest memories.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="gift" class="page">
+  <div class="eyebrow">A tiny surprise</div>
+  <h1>Secret Gift</h1>
+  <div class="gift-box">🎁</div>
+  <p class="subtitle">Хайрдаа зориулсан жижигхэн бэлэг бий...</p>
+  <button class="main-button" onclick="secretGift()">Open your gift ♡</button>
+  <div id="giftMessage">
+    ♡ Matching shirts ♡
+    <br>Happy 100 Days, my love!
+  </div>
+</section>
+
+</main>
+
+<footer>
+  Made with love, just for you ♡
+</footer>
+
+<script>
+const reasons = [
+"Чи миний амьдралд орж ирсэнд.",
+"Чиний ертөнцийг харах өнцөг надад сонирхолтой байдагт.",
+"Чи өөрийн гэсэн бодолтой хүн учраас.",
+"Чиний инээх үедээ гаргадаг хөөрхөн төрхөд.",
+"Чи заримдаа юу ч хэлэлгүйгээр намайг ойлгодогт.",
+"Чиний мөрөөдөл, зорилгод би дуртай.",
+"Чи өөрийнхөөрөө байхдаа хамгийн хөөрхөн харагддагт.",
+"Чиний надад зориулдаг цаг хугацаанд.",
+"Чамтай ярилцах сэдэв хэзээ ч дуусдаггүйд.",
+"Чи миний өдөрт гэнэтийн аз жаргал авчирдагт.",
+"Чиний бага зэрэг зөрүүд зан хүртэл хөөрхөн санагддагт.",
+"Чи дуртай зүйлээ ярихдаа баярладаг нь хөөрхөн.",
+"Чиний хүүхэд шиг баярладаг цөөхөн мөчүүдэд.",
+"Чи намайг шинэ зүйл бодож үзэхэд хүргэдэгт.",
+"Чи намайг өөртөө итгэх итгэлтэй болгодогт.",
+"Чи надад жижигхэн зүйлсийг ч анзаарахыг заадагт.",
+"Чиний надад зориулж гаргадаг хичээл зүтгэлд.",
+"Чи заримдаа өөрөө ч мэдэлгүй намайг инээлгэдэгт.",
+"Чиний бусадтай харилцдаг байдлыг хараад уур хүрдэгт.",
+"Чиний өөрийн гэсэн онцгой зан чанартай.",
+"Чамтай хамт шинэ газар очихыг хүсдэгт.",
+"Чиний амьдралын тухай ярьж өгөхийг сонсох дуртай.",
+"Чи миний хамгийн дуртай хамтрагч байж чаддагт.",
+"Чиний ярьж байх үеийн жижиг зуршлуудад.",
+"Чи намайг заримдаа өөрөөсөө илүү сайн мэддэгт.",
+"Чиний хариуцлагатай байдалд.",
+"Чи өөрийнхөөрөө хичээж, урагшилдагт.",
+"Чиний надад итгэдэгт.",
+"Чамтай хамт хөгжилтэй дурсамж бүтээх боломжтойд.",
+"Чи миний амьдралд шинэ мэдрэмжүүд авчирсан учраас.",
+"Чиний дуртай хоолыг хамт идэхийг хүсдэгт.",
+"Чамтай хамт замд гарах хүртэл гоё байдагт.",
+"Чиний унтахын өмнөх ярианд дуртай.",
+"Чи миний бүх зүйл баярладагт.",
+"Чиний намайг өхөөрддөгт.",
+"Чиний надад ярьдаг жижигхэн нууцуудад.",
+"Чамтай хамт ямар ч төлөвлөгөөгүй өдөр өнгөрүүлэх дуртай.",
+"Чиний өөрийн гэсэн инээдтэй үг, хэллэгүүдэд.",
+"Чи миний сонирхлыг хүндэлдэгт.",
+"Чиний намайг өөрөөрөө байхад минь зөвшөөрдөгт.",
+"Чамтай хамт анх удаа хийж үзэх зүйл олон байгаа гэж боддогт.",
+"Чиний заримдаа гаргадаг хөөрхөн төрхөд.",
+"Чиний хувцаслах хэв маягт.",
+"Чиний өөртөө анхаарал тавьдагт.",
+"Чамтай хамт зураг авах дуртай.",
+"Чиний намайг гайхшруулдаг жижигхэн үйлдлүүдэд.",
+"Чиний сонсдог хөгжимтэй танилцах дуртай.",
+"Чамтай хамт кино үзэхэд.",
+"Чиний өөрийн гэсэн амьдрал, сонирхолтой байдагт.",
+"Чамтай хамт өнгөрүүлэх энгийн орой хүртэл онцгой байдагт.",
+"Чиний надад хэлж байсан сайхан үгсийг мартдаггүй.",
+"Чи миний зарим айдсыг бага болгодогт.",
+"Чиний тэвчээртэй байдалд.",
+"Чи надад өөрийгөө хөгжүүлэх урам өгдөгт.",
+"Чиний бусдаас ялгарах жижигхэн онцлогуудад.",
+"Чиний намайг баярлуулах гэж бодож олдог санаануудад.",
+"Чамтай ярилцахад тухтай байдагт.",
+"Чиний надад зориулж санаа тавьдагт.",
+"Чамтай хамт ирээдүйн аяллын төлөвлөгөө гаргах дуртай.",
+"Чиний дэргэд би илүү их инээдэгт.",
+"Чиний тэврэлтээс төрдөг дулаахан мэдрэмжид.",
+"Чамтай хамт бороо орж байгааг цонхоор харахыг хүсдэгт.",
+"Чиний дуртай зүйлсийг мэдэж авах дуртай.",
+"Чи миний хувьд хэн нэгнээр орлуулж болохгүй хүн учраас.",
+"Чиний намайг хамгаалахыг хүсдэг зан чанарт.",
+"Чиний заримдаа гаргадаг гэнэтийн романтик үйлдлүүдэд.",
+"Чи намайг өөрийнхөө тухай илүү ихийг ойлгоход тусалдагт.",
+"Чиний надтай хуваалцдаг баяр баясгаланд.",
+"Чамтай хамт тэнгэр ширтэж суухыг хүсдэгт.",
+"Чиний мөрөөдөлдөө хүрээсэй гэж хүсдэгт.",
+"Чиний миний төлөө хийдэг жижигхэн зүйлсэд.",
+"Чи намайг заримдаа үггүй болтол догдлуулдагт.",
+"Чиний намайг хараад инээмсэглэх тэр мөчид.",
+"Чамтай хамт дэлгүүр хэсэх хүртэл хөгжилтэй байдагт.",
+"Чиний өөрийн гэсэн сонин содон зуршлуудад.",
+"Чи миний хамгийн дуртай хүний тухай бодох асуултын хариулт байдагт.",
+"Чиний дэргэд би хайрлуулах ямар байдгийг мэдэрдэгт.",
+"Чамтай хамт жижигхэн баяр тэмдэглэхийг хүсдэгт.",
+"Чиний намайг хүлээдэгт.",
+"Чиний амьдралынхаа түүхийг надад ярьж өгдөгт.",
+"Чи миний хувьд хайртай хүнээс гадна найз минь байж чаддагт.",
+"Чиний хүсэл тэмүүлэлд.",
+"Чамтай хамт олон жилийн дараах дурсамжуудаа ярихыг хүсдэгт.",
+"Чиний надад зориулж гаргадаг жижигхэн хочнуудад.",
+"Чи заримдаа ямар ч шалтгаангүйгээр санаанд ордогт.",
+"Чи намайг өөрийн ертөнцдөө багтаадагт.",
+"Чиний хажууд байхдаа маргаашийг тэсэн ядан хүлээдэгт.",
+"Чи миний амьдралын нэгэн сайхан бүлгийг эхлүүлсэнд.",
+"Чиний аз жаргалтай байхыг харахыг хүсдэгт.",
+"Чамтай хамт байхдаа ирээдүйгээс айх нь багасдагт.",
+"Чамайг улам сайн таних тусам дурлах шинэ зүйл олддогт.",
+"Чи миний хувьд хайр гэдэг үгийг илүү утгатай болгосонд.",
+"Чиний байгаа байдал заримдаа миний сэтгэлийг тайвшруулдагт.",
+"Чамтай хамт өнгөрүүлсэн мөчүүдийг дахин сонгох байсанд.",
+"Чи миний амьдралд тохиолдсон хамгийн нандин учралуудын нэгт.",
+"Чамтай хамт олон олон зуун өдрийг угтахыг хүсдэгт.",
+"Чи миний зүрхэнд өөр хэнд ч байхгүй байр суурь эзэлдэгт.",
+"Чамайг өнөөдрийнхөөсөө ч илүү сайн таньж мэдэхийг хүсдэгт.",
+"Энэ 99 шалтгааныг бичихэд ч чамд хайртай өөр олон шалтгаан үлдсээр байгаад."
+];
+
+let currentReason = 0;
+
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(page => {
+    page.classList.remove('active');
+  });
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function updateReason() {
+  document.getElementById('reasonNumber').textContent =
+    `Reason ${currentReason + 1} / 99`;
+  document.getElementById('reasonText').textContent =
+    reasons[currentReason];
+}
+
+function nextReason() {
+  if(currentReason < reasons.length - 1) {
+    currentReason++;
+    updateReason();
+  } else {
+    document.getElementById('reason100').classList.add('show');
+    document.getElementById('reason100').scrollIntoView({
+      behavior:'smooth',
+      block:'center'
+    });
+  }
+}
+
+function secretGift() {
+  document.getElementById('giftMessage').style.display = 'block';
+}
+
+const stars = document.getElementById('stars');
+
+for(let i=0;i<45;i++) {
+  const star = document.createElement('span');
+  star.className = 'star';
+  star.textContent = '✦';
+  star.style.left = Math.random()*100 + '%';
+  star.style.top = Math.random()*100 + '%';
+  star.style.fontSize = (8+Math.random()*12) + 'px';
+  star.style.animationDelay = Math.random()*4 + 's';
+  stars.appendChild(star);
+}
+
+updateReason();
+</script>
 
 </body>
 </html>
